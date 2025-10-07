@@ -34,7 +34,7 @@ function App() {
 
       <Routes>
         {/* GalleryView */}
-        <Route path='/GalleryView' element={<GalleryView />} />
+        {/* <Route path='/GalleryView' element={<GalleryView />} /> */}
 
         {/* ListView */}
         <Route path="/" element={<ListView />} />
