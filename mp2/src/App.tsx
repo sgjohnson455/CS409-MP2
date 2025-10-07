@@ -6,8 +6,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.css';
 
 // components
-import ListView from "./components/ListView";
-import DetailView from "./components/DetailedView";
+import ListView from "./pages/ListView";
+import DetailView from "./pages/DetailView";
+//import GalleryView from "./pages/GalleryView";
 
 
 // main app //////////////////////////
@@ -16,16 +17,30 @@ function App() {
     <Router basename="CS409-MP2">
 
       <header className="header">
-        <Link to="/" className="header-link">
+        <Link to="/HomePage" className="header-link">
           Compact Pokédex
         </Link>
+
+        {/* Tab navigation */}
+        <nav className="tabs">
+          <Link to="/" className="tab-link">
+            List
+          </Link>
+          <Link to="/GalleryView" className="tab-link">
+            Gallery
+          </Link>
+        </nav>
       </header>
 
       <Routes>
+        {/* GalleryView */}
+        <Route path='/GalleryView' element={<GalleryView />} />
+
+        {/* ListView */}
         <Route path="/" element={<ListView />} />
         <Route path="/pokemon/:name" element={<DetailView />} />
       </Routes>
-    </Router>
+    </Router >
   );
 }
 
