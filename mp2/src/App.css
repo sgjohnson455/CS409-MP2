@@ -32,7 +32,33 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Text Styling */
+.header {
+  background-color: #3b82f6;
+  /* Tailwind bg-blue-500 */
+  color: white;
+  /* text-white */
+  padding: 1rem;
+  /* p-4 */
+  text-align: center;
+  /* text-center */
+  font-size: 1.5rem;
+  /* text-2xl */
+  font-weight: bold;
+  /* font-bold */
+}
+
+.header-link {
+  text-decoration: none;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+  /* hover:underline */
 }

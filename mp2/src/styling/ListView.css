@@ -1,0 +1,8 @@
+/* test styling for search bar */
+.search-input {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 8px 12px;
+    width: 80%;
+    font-size: 24px;
+}
