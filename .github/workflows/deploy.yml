@@ -35,14 +35,12 @@ jobs:
         run: npm ci
 
       - name: Build site
-        run: | 
-          cd mp2
-          npm run build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: mp2/build
+          path: ./build
   
   deploy:
     needs: build
