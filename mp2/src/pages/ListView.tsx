@@ -7,19 +7,19 @@ import "../styling/ListView.css";
 const ListView: React.FC = () => {
     const [pokemons, setPokemons] = useState<{ name: string; url: string }[]>([]);
     const [search, setSearch] = useState("");
-    const [sortBy, setSortBy] = useState(null); // initially no sorting
-    const [sortOrder, setSortOrder] = useState('asc'); // default to ascending
+    const [sortOrder, setSortOrder] = useState('asc'); // default is ascending sort
 
     // fetch pokemon list (200 entries), call setter
     useEffect(() => {
         getPokemonList(200).then(setPokemons);
     }, []);
 
-    // more advanced filtering
+    // filtering
     const filtered = pokemons.filter(p =>
         p.name.toLowerCase().includes(search.toLowerCase())
     );
 
+    // more advanced filtering
     const sortedPokemons = [...filtered].sort((a, b) => {
         if (sortOrder === "asc") {
             return a.name.localeCompare(b.name);
