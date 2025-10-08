@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "../styling/ListView.css";
 
 const ListView: React.FC = () => {
-    // state hooks
     const [pokemons, setPokemons] = useState<{ name: string; url: string }[]>([]);
     const [search, setSearch] = useState("");
 
@@ -33,8 +32,8 @@ const ListView: React.FC = () => {
             {/* bulleted pokemon list */}
             <ul>
                 {filtered.map(p => (
-                    <li key={p.name}>
-                        <Link to={`/pokemon/${p.name}`}>
+                    <li key={p.name} className="pokemon-list-item">
+                        <Link to={`/pokemon/${p.name}`} className="pokemon-link">
                             {p.name}
                         </Link>
                     </li>

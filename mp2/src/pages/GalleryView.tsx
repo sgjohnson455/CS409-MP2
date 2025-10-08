@@ -16,19 +16,14 @@ const GalleryView: React.FC = () => {
 
     // initialize with 200 entries
     useEffect(() => {
-        getPokemonList(200).then(setPokemons)
+        getPokemonList(500).then(setPokemons)
     }, [])
-
-    // helper to extract pokedex number from url
-    const getDexNumFromUrl = (url: string) => {
-        const parts = url.split("/").filter(Boolean);
-        return parts[parts.length - 1];
-    };
 
     // get sprite url from PokeAPI sprite repository
     const getPokeSpriteUrl = (url: string) => {
-        const id = getDexNumFromUrl(url);
-        return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+        const parts = url.split("/").filter(Boolean);
+        const number = parts[parts.length - 1];
+        return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${number}.png`;
     };
 
     return (

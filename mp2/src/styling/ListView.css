@@ -6,3 +6,12 @@
     width: 80%;
     font-size: 24px;
 }
+
+.pokemon-list-item {
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.pokemon-link {
+    text-decoration: none;
+}

@@ -18,6 +18,7 @@ const DetailView: React.FC = () => {
         }
     }, [name]);
 
+    // loading text fr
     if (!pokemon) return <p>Loading...</p>;
 
     // find first description in english (and filter out form feed characters)
@@ -42,6 +43,7 @@ const DetailView: React.FC = () => {
 
             <div className="poke-card">
 
+                {/* front and back */}
                 <img
                     src={pokemon.sprites.front_default ?? ""}
                     alt={pokemon.name}
