@@ -12,6 +12,8 @@ interface PokemonListItem {
 }
 
 const GalleryView: React.FC = () => {
+    // searchable types
+    const pokemontypes = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy']
     const [pokemons, setPokemons] = useState<PokemonListItem[]>([]);
 
     // initialize with 200 entries
