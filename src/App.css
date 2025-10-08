@@ -32,6 +32,8 @@
 
 /* header styling */
 .header {
+  display: flex;
+  flex-direction: column;
   background-color: red;
   color: white;
   padding: 20px;
@@ -62,4 +64,10 @@
 .tab-link:hover {
   color: #282c34;
   opacity: 0.8;
+}
+
+.logo {
+  display: block;
+  margin: 0px auto;
+  width: 70px;
 }

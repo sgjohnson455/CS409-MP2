@@ -1,6 +1,7 @@
 // packages
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import pokeball from "./assets/Poké_Ball_icon.svg.png";
 
 // styling
 import './App.css';
@@ -17,6 +18,8 @@ function App() {
     <Router basename="CS409-MP2">
 
       <header className="header">
+        <img src={pokeball} alt="pokeball" className="logo" />
+
         <Link to="/HomePage" className="header-link">
           Compact Pokédex
         </Link>
