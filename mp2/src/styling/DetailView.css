@@ -1,0 +1,58 @@
+.detail-card {
+    text-align: center;
+    padding: 50px;
+    font-size: 15px;
+}
+
+.poke-image {
+    width: 150px;
+    height: 150px;
+    margin: 0px;
+}
+
+.poke-card {
+    background-color: #e6e6e6;
+    max-width: 60%;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 35px;
+}
+
+.poke-name {
+    text-transform: capitalize;
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+.poke-type {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.poke-description {
+    margin: 1rem auto;
+    max-width: 400px;
+    font-size: 20px;
+}
+
+.nav-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-button {
+    background-color: #ef5350;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background-color: #d32f2f;
+}

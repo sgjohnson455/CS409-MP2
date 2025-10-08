@@ -9,7 +9,7 @@ const ListView: React.FC = () => {
     const [pokemons, setPokemons] = useState<{ name: string; url: string }[]>([]);
     const [search, setSearch] = useState("");
 
-    // fetch pokemon list (50 entries), call setter (setPokemons)
+    // fetch pokemon list (200 entries), call setter
     useEffect(() => {
         getPokemonList(200).then(setPokemons);
     }, []);

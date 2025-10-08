@@ -8,7 +8,7 @@ import './App.css';
 // components
 import ListView from "./pages/ListView";
 import DetailView from "./pages/DetailView";
-//import GalleryView from "./pages/GalleryView";
+import GalleryView from "./pages/GalleryView";
 
 
 // main app //////////////////////////
@@ -32,9 +32,10 @@ function App() {
         </nav>
       </header>
 
+
       <Routes>
         {/* GalleryView */}
-        {/* <Route path='/GalleryView' element={<GalleryView />} /> */}
+        <Route path='/GalleryView' element={<GalleryView />} />
 
         {/* ListView */}
         <Route path="/" element={<ListView />} />
