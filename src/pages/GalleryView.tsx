@@ -13,7 +13,7 @@ interface PokemonListItem {
 
 const GalleryView: React.FC = () => {
     // searchable types
-    const pokemontypes = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy']
+    //const pokemontypes = ['Normal', 'Fire', 'Water', 'Electric', 'Grass', 'Ice', 'Fighting', 'Poison', 'Ground', 'Flying', 'Psychic', 'Bug', 'Rock', 'Ghost', 'Dragon', 'Dark', 'Steel', 'Fairy']
     const [pokemons, setPokemons] = useState<PokemonListItem[]>([]);
 
     // initialize with 200 entries
@@ -34,7 +34,11 @@ const GalleryView: React.FC = () => {
 
                 {pokemons.map((p) => (
                     <Link key={p.name} to={`/pokemon/${p.name}`} className="gallery-card">
-                        <img src={getPokeSpriteUrl(p.url)} className="gallery-img" />
+                        <img
+                            src={getPokeSpriteUrl(p.url)}
+                            alt={p.name}
+                            className="gallery-img"
+                        />
                         <span className="gallery-name">{p.name}</span>
                     </Link>
                 ))}
