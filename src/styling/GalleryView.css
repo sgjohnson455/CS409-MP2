@@ -11,6 +11,7 @@
     gap: 10px;
     width: 90%;
     max-width: 1000px;
+    margin: 0 auto;
 }
 
 .gallery-card {
