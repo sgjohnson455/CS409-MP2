@@ -15,12 +15,12 @@ import GalleryView from "./pages/GalleryView";
 // main app //////////////////////////
 function App() {
   return (
-    <Router basename="CS409-MP2">
+    <Router basename="/CS409-MP2">
 
       <header className="header">
         <img src={pokeball} alt="pokeball" className="logo" />
 
-        <Link to="/HomePage" className="header-link">
+        <Link to="/" className="header-link">
           Compact Pokédex
         </Link>
 

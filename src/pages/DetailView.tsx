@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getPokemonByName, getPokemonSpecies } from "../api/pokemonApi";
+import type { Pokemon, PokemonSpecies } from "../api/pokemonApi";
 import { useNavigate, useParams } from "react-router-dom";
-import type { Pokemon, PokemonSpecies } from "pokenode-ts";
 
 import "../styling/DetailView.css";
 
@@ -13,13 +13,23 @@ const DetailView: React.FC = () => {
 
     useEffect(() => {
         if (name) {
-            getPokemonByName(name).then(setPokemon);
-            getPokemonSpecies(name).then(setSpecies);
+            getPokemonByName(name).then((data) => {
+                if (data) setPokemon(data);
+            });
+            getPokemonSpecies(name).then((data) => {
+                if (data) setSpecies(data);
+            });
         }
     }, [name]);
 
     // loading text fr
-    if (!pokemon) return <p>Loading...</p>;
+    if (!pokemon) {
+        return (
+            <div className="loading-screen">
+                <p>Loading Pokémon Details...</p>
+            </div>
+        );
+    }
 
     // find first description in english (and filter out form feed characters)
     const description =

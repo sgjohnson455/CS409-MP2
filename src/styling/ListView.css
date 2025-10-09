@@ -48,12 +48,13 @@
 .sort-button {
     padding: 5px 15px;
     color: black;
-    background-color: aqua;
+    background-color: #ddd;
     margin-left: 40px;
     border-radius: 3px;
     border: 1.5px solid #868686;
 }
 
 .sort-button:hover {
-    background-color: #d9d9d9;
+    background-color: #00bcd4;
+    color: white;
 }

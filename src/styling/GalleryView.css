@@ -1,6 +1,7 @@
 .gallery-container {
     padding: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -38,4 +39,33 @@
     text-transform: capitalize;
     color: #333;
     font-weight: 600;
+}
+
+/* type buttons */
+.type-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.type-button {
+    padding: 6px 12px;
+    border: 1px solid #888;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.type-button:hover {
+    background-color: #ddd;
+}
+
+/* active button */
+.type-button.active {
+    background-color: #00bcd4;
+    color: white;
 }

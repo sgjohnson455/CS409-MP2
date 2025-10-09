@@ -50,16 +50,16 @@ const ListView: React.FC = () => {
                 </button>
             </div>
 
-            {/* bulleted pokemon list */}
+            {/* pokemon list */}
             <ul>
                 {sortedPokemons.map(p => (
-                    <div className="pokemonlist-box">
-                        <li key={p.name} className="pokemon-list-item">
-                            <Link to={`/pokemon/${p.name}`} className="pokemon-link">
+                    <li key={p.name} className="pokemon-list-item">
+                        <Link to={`/pokemon/${p.name}`} className="pokemon-link">
+                            <div className="pokemonlist-box">
                                 {p.name}
-                            </Link>
-                        </li>
-                    </div>
+                            </div>
+                        </Link>
+                    </li>
                 ))}
             </ul>
         </div >
