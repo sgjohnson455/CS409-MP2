@@ -22,7 +22,7 @@ const DetailView: React.FC = () => {
         }
     }, [name]);
 
-    // loading text fr
+    // loading text
     if (!pokemon) {
         return (
             <div className="loading-screen">

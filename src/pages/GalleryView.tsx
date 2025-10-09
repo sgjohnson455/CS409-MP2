@@ -1,8 +1,11 @@
+// packages
 import React, { useEffect, useState } from "react";
 import { getPokemonList, getPokemonByName } from "../api/pokemonApi";
 import { Link } from "react-router-dom";
 
+// style and assets
 import "../styling/GalleryView.css";
+import pokeball from "../assets/Poké_Ball_icon.svg.png";
 
 // list name, url, types (as a string)
 interface PokemonListItem {
@@ -21,11 +24,12 @@ const GalleryView: React.FC = () => {
     const [selectedType, setSelectedType] = useState("All"); // default, show all of them
 
     const [pokemons, setPokemons] = useState<PokemonListItem[]>([]);
+    const [loading, setLoading] = useState(true);
 
     // load in the types
     useEffect(() => {
         async function fetchPokemons() {
-            const list = await getPokemonList(250);
+            const list = await getPokemonList(500);
 
             const detailed = await Promise.all(
                 list.map(async (p) => {
@@ -38,10 +42,10 @@ const GalleryView: React.FC = () => {
             );
 
             setPokemons(detailed);
+            setLoading(false);
         }
         fetchPokemons();
     }, []);
-
 
     const filteredPokemons = pokemons.filter((p) =>
         selectedType === "All" || p.types.includes(selectedType)
@@ -58,6 +62,7 @@ const GalleryView: React.FC = () => {
     return (
         <div className="gallery-container">
 
+            {/* buttons to search by type */}
             <div className="type-buttons-container">
                 <button
                     className={`type-button ${selectedType === "All" ? "active" : ""}`}
@@ -76,23 +81,31 @@ const GalleryView: React.FC = () => {
                 ))}
             </div>
 
+            {/* either show loading or galler cards */}
+            {loading ? (
+                <div className="loading-screen">
+                    <img src={pokeball} alt="pokeball" className="loading-ball" />
+                    <p>Loading Pokémon...</p>
+                </div>
+            ) : (
+                <div className="gallery-grid">
 
-            <div className="gallery-grid">
 
-                {/* map filtered pokemon */}
-                {filteredPokemons.map((p: PokemonListItem) => (
-                    <Link key={p.name} to={`/pokemon/${p.name}`} className="gallery-card">
-                        <img
-                            src={getPokeSpriteUrl(p.url)}
-                            alt={p.name}
-                            className="gallery-img"
-                        />
-                        <span className="gallery-name">{p.name}</span>
-                    </Link>
-                ))}
-            </div>
+                    {filteredPokemons.map((p: PokemonListItem) => (
+                        <Link key={p.name} to={`/pokemon/${p.name}`} className="gallery-card">
+                            <img
+                                src={getPokeSpriteUrl(p.url)}
+                                alt={p.name}
+                                className="gallery-img"
+                            />
+                            <span className="gallery-name">{p.name}</span>
+                        </Link>
+                    ))}
+                </div>
+            )
+            }
 
-        </div>
+        </div >
     );
 };
 

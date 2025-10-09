@@ -56,3 +56,29 @@
 .nav-button:hover {
     background-color: #d32f2f;
 }
+
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+}
+
+.loading-ball {
+    animation: spin 2s linear infinite;
+    width: 100px;
+}
+
+/* reuse spinning animation from default react logo */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

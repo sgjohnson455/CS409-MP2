@@ -1,15 +1,15 @@
 // packages
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import pokeball from "./assets/Poké_Ball_icon.svg.png";
 
 // styling
 import './App.css';
 
-// components
+// pages + assets
 import ListView from "./pages/ListView";
 import DetailView from "./pages/DetailView";
 import GalleryView from "./pages/GalleryView";
+import pokeball from "./assets/Poké_Ball_icon.svg.png";
 
 
 // main app //////////////////////////

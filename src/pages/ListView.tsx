@@ -11,7 +11,7 @@ const ListView: React.FC = () => {
 
     // fetch pokemon list (200 entries), call setter
     useEffect(() => {
-        getPokemonList(200).then(setPokemons);
+        getPokemonList(500).then(setPokemons);
     }, []);
 
     // filtering
