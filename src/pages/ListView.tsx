@@ -30,7 +30,7 @@ const ListView: React.FC = () => {
         p.name.toLowerCase().includes(search.toLowerCase())
     );
 
-    // more advanced filtering
+    // more advanced filtering/sorting
     const sortedPokemons = [...filtered].sort((a, b) => {
         if (sortByDexNum) {
             return sortOrder === 'asc'
@@ -51,7 +51,7 @@ const ListView: React.FC = () => {
     // toggle if sorting by number or alphabetical
     const handleToggleSortType = () => {
         setSortByDexNum(!sortByDexNum);
-        setSortOrder('asc'); // reset order to ascending when switching type
+        setSortOrder('asc'); // reset order to asc when back to sorting alphabetically
     };
 
     return (
