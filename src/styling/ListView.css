@@ -59,6 +59,17 @@ ul {
     background-color: #d9d9d9;
 }
 
+.name-num {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
 .pokemon-link {
     text-decoration: none;
     color: black;
@@ -78,9 +89,14 @@ ul {
     border-radius: 8px;
     border: 1px solid #b9b9b9;
     font-weight: bold;
+    margin: 0 10px;
 }
 
 .sort-button:hover {
     background-color: #00bcd4;
     color: white;
+}
+
+.sort-buttons {
+    display: flex;
 }
