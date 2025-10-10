@@ -22,11 +22,11 @@ const DetailView: React.FC = () => {
         }
     }, [name]);
 
-    // loading text
+    // loading text fr
     if (!pokemon) {
         return (
             <div className="loading-screen">
-                <p>Loading Pokémon Details...</p>
+                <p>Loading Pokémon...</p>
             </div>
         );
     }
@@ -53,6 +53,7 @@ const DetailView: React.FC = () => {
 
             <div className="poke-card">
 
+                <p className="dexnum">#{pokemon.id}</p>
                 {/* front and back */}
                 <img
                     src={pokemon.sprites.front_default ?? ""}
@@ -70,7 +71,7 @@ const DetailView: React.FC = () => {
                 <p>Weight: {pokemon.weight}</p>
 
                 <div className="poke-type">
-                    <p>{pokemon.types.map(t => t.type.name).join(", ")}</p>
+                    <p>Types: {pokemon.types.map(t => t.type.name).join(", ")}</p>
                 </div>
 
                 <div className="poke-description">

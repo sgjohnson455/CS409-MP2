@@ -82,9 +82,11 @@
     flex-direction: column;
     text-align: center;
     font-size: 30px;
+    padding-top: 100px;
 }
 
 .loading-ball {
+
     animation: spin 2s linear infinite;
     width: 100px;
 }

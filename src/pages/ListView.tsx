@@ -3,6 +3,9 @@ import { getPokemonList } from "../api/pokemonApi";
 import { Link } from "react-router-dom";
 
 import "../styling/ListView.css";
+import pokeballlist from "../assets/pokeballbw.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const ListView: React.FC = () => {
     const [pokemons, setPokemons] = useState<{ name: string; url: string }[]>([]);
@@ -36,17 +39,21 @@ const ListView: React.FC = () => {
     return (
         <div className="listview-container">
             {/* searchbar */}
-            <input
-                type="text"
-                placeholder="Search..."
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                className="search-input"
-            />
+
+            <div className="searchbar">
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="searchicon" />
+                <input
+                    type="text"
+                    placeholder="Search for a Pokémon..."
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                    className="search-input"
+                />
+            </div>
             <div className="sort-buttons">
                 {/* sort button */}
                 <button onClick={handleToggleSort} className="sort-button">
-                    {sortOrder === "asc" ? "Ascending" : "Descending"}
+                    {sortOrder === "asc" ? "⬇️ Ascending" : "⬆️ Descending"}
                 </button>
             </div>
 
@@ -56,6 +63,7 @@ const ListView: React.FC = () => {
                     <li key={p.name} className="pokemon-list-item">
                         <Link to={`/pokemon/${p.name}`} className="pokemon-link">
                             <div className="pokemonlist-box">
+                                <img src={pokeballlist} alt="pokeball" className="pokebulletpoint" />
                                 {p.name}
                             </div>
                         </Link>
