@@ -12,7 +12,7 @@ const ListView: React.FC = () => {
     const [search, setSearch] = useState("");
     const [sortOrder, setSortOrder] = useState('asc'); // default is ascending sort
 
-    // fetch pokemon list (200 entries), call setter
+    // fetch pokemon list (500 entries), call setter
     useEffect(() => {
         getPokemonList(500).then(setPokemons);
     }, []);
